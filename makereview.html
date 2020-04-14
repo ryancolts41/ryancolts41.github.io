@@ -105,7 +105,7 @@ width: 150px;
 </div>
 <h3>Write a Review</h3>
 
-<form name="purchase" onsubmit="myFunction()" action="submittedReview.php" method="post" id="formText" autocomplete='on'>
+<form name="purchase" onsubmit="myFunction()" action="submittedReview.html" method="post" id="formText" autocomplete='on'>
 
 <div class = "leftDiv">
 <p class = "leftP">First Name </p>
@@ -197,7 +197,6 @@ width: 150px;
 
 function myFunction() {
   document.getElementById("sumitNotify").innerHTML = "Submitted!";
-  CreateExcelSheet();
   window.location.href = submittedReview.html;
 }
 
