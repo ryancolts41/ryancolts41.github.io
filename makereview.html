@@ -105,8 +105,8 @@ width: 150px;
 </div>
 <h3>Write a Review</h3>
 
+<form name="purchase" onsubmit="myFunction()" action="submittedReview.php" method="post" id="formText" autocomplete='on'>
 
-<form name="purchase" onsubmit="myFunction()" action="submittedReview.html" method="post" id="formText" autocomplete='on'>
 <div class = "leftDiv">
 <p class = "leftP">First Name </p>
 <p class = "leftP">Last Name </p>
@@ -120,7 +120,7 @@ width: 150px;
 
 <div class = "rightDiv">
 <p class = "rightP"><input id = "firstNameId" type="text" required name="firstName" pattern="[A-Z a-z]*" autocomplete='given-name'></p>
-<p class = "rightP"><input id = "lastNameId" type="text" required name="lastName" pattern="[A-Z a-z]*" autocomplete='family-name'></p>
+<p class = "rightP"><input id = "lastNameId" type="text" required name="lastName" name="lastName" pattern="[A-Z a-z]*" autocomplete='family-name'></p>
 <p class = "rightP"><input id = "email" type="email" required name="email" autocomplete='email'></p>
 <p class = "rightP"><input id = "phoneId" type="text" required name="phoneNumber" pattern="^(\+0?1\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$" autocomplete='tel'></p>
 <p class = "rightP"><input id = "cityId" type="text" required name="city" pattern="[A-Z a-z]*" autocomplete='address-level2'></p>
@@ -143,27 +143,27 @@ width: 150px;
   <legend>Internet Speed:</legend>
   
     <div class = "radioDiv">
-    <input type="radio" id="small" value = "5" name="Internet Speed" class = "radioInput" required/>
+    <input type="radio" id="speedExcellent" value = "5" name="Internet Speed" class = "radioInput" required/>
     <label for="small" class = "labelStyle">Excellent</label>
     </div>
 
     <div class = "radioDiv">
-    <input type="radio" id="medium" value = "4" name="Internet Speed" class = "radioInput" required/>
+    <input type="radio" id="speedAA" value = "4" name="Internet Speed" class = "radioInput" required/>
     <label for="medium" class = "labelStyle">Above Average</label>
     </div>
 
     <div class = "radioDiv">
-    <input type="radio" id="large" value = "3" name="Internet Speed" class = "radioInput" required/>
+    <input type="radio" id="speedA" value = "3" name="Internet Speed" class = "radioInput" required/>
     <label for="large" class = "labelStyle">Average</label>
     </div>
 	
 	<div class = "radioDiv">
-    <input type="radio" id="large" value = "2" name="Internet Speed" class = "radioInput" required/>
+    <input type="radio" id="speedBA" value = "2" name="Internet Speed" class = "radioInput" required/>
     <label for="large" class = "labelStyle">Bellow Average</label>
     </div>
 	
 	<div class = "radioDiv">
-    <input type="radio" id="large" value = "1" name="Internet Speed" class = "radioInput" required/>
+    <input type="radio" id="SpeedPoor" value = "1" name="Internet Speed" class = "radioInput" required/>
     <label for="large" class = "labelStyle">Poor</label>
     </div>
     
@@ -185,7 +185,7 @@ width: 150px;
 
 
 
-<p ><input type="submit" value="Submit Review" class = "submitClass"></p>
+<p><input type="submit" value="Submit Review" class = "submitClass"></p>
 </div>
 </form>
 <div id=sumitNotify>
@@ -194,10 +194,13 @@ width: 150px;
 
 
 <script>
+
 function myFunction() {
   document.getElementById("sumitNotify").innerHTML = "Submitted!";
+  CreateExcelSheet();
   window.location.href = submittedReview.html;
 }
+
 </script>
 
 </body>
